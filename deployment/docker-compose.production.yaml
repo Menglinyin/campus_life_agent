@@ -1,0 +1,75 @@
+services:
+  backend:
+    build:
+      args: {INSTALL_RAG: "true"}
+    command: [python, config/launch.py, --profile, production, --host, 0.0.0.0, --port, '8000']
+    environment:
+      CAMPUS_DEMO: "false"
+      CAMPUS_DATABASE_URL: "mysql+pymysql://campus:${MYSQL_PASSWORD_URLENCODED:?Run init_env.py}@mysql:3306/campus?charset=utf8mb4"
+      CAMPUS_USER_TOKENS: "${CAMPUS_USER_TOKENS:?Run init_env.py}"
+      CAMPUS_REDIS_URL: "redis://:${REDIS_PASSWORD_URLENCODED:?Run init_env.py}@redis:6379/0"
+      CAMPUS_SESSION_TTL: "259200"
+      CAMPUS_EMBEDDING_BACKEND: bge
+      CAMPUS_EMBEDDING_FP16: "false"
+      CAMPUS_CHROMA_PATH: /srv/chroma
+      CAMPUS_RERANKER_MODEL: BAAI/bge-reranker-v2-m3
+      CAMPUS_LLM_BASE_URL: "${CAMPUS_LLM_BASE_URL:-http://vllm:8000/v1}"
+      CAMPUS_LLM_API_KEY: "${VLLM_API_KEY:?Run init_env.py}"
+      CAMPUS_LLM_MODEL: Qwen3-32B-AWQ
+      CAMPUS_MCP_SERVERS: "${CAMPUS_MCP_SERVERS:?Run init_env.py}"
+      CAMPUS_MCP_TOKEN: "${CAMPUS_MCP_TOKEN:-}"
+      CAMPUS_ASR_URL: "${CAMPUS_ASR_URL:-}"
+      CAMPUS_TTS_URL: "${CAMPUS_TTS_URL:-}"
+    depends_on:
+      mysql: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    networks: [default, inference]
+    volumes:
+      - chroma:/srv/chroma
+      - model-cache:/srv/model-cache
+    healthcheck:
+      start_period: 600s  # 首次加载嵌入模型可能较慢
+  mysql:
+    image: mysql:8.0.42
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: campus
+      MYSQL_USER: campus
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+    secrets: [mysql_password, mysql_root_password]
+    command: [--character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    volumes: [mysql-data:/var/lib/mysql]
+    healthcheck:
+      test: [CMD-SHELL, 'mysqladmin ping -h 127.0.0.1 --silent']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+  redis:
+    image: redis:7.4.2-alpine
+    restart: unless-stopped
+    secrets: [redis_password]
+    command:
+      - sh
+      - -c
+      - 'exec redis-server --appendonly yes --appendfsync everysec --maxmemory 256mb --maxmemory-policy noeviction --requirepass "$$(cat /run/secrets/redis_password)"'
+    volumes: [redis-data:/data]
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH="$$(cat /run/secrets/redis_password)" redis-cli ping | grep -q PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 6
+volumes:
+  mysql-data: {}
+  redis-data: {}
+  chroma: {}
+  model-cache: {}
+secrets:
+  mysql_password: {file: ./secrets/mysql_password.txt}
+  mysql_root_password: {file: ./secrets/mysql_root_password.txt}
+  redis_password: {file: ./secrets/redis_password.txt}
+networks:
+  inference:
+    external: true
+    name: campus-inference

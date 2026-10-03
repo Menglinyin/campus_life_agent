@@ -1,0 +1,50 @@
+name: campus-life-agent
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deployment/backend.Dockerfile
+      args:
+        INSTALL_RAG: "false"
+    init: true
+    restart: unless-stopped
+    environment:
+      CAMPUS_DEMO: "true"
+      CAMPUS_DATABASE_URL: sqlite:////srv/runtime/campus.db
+      CAMPUS_USER_TOKENS: '{"demo-token":"demo-student"}'
+      CAMPUS_REDIS_URL: ""
+      CAMPUS_SESSION_TTL: "259200"
+      CAMPUS_EMBEDDING_BACKEND: demo
+      CAMPUS_CHROMA_PATH: ""
+      CAMPUS_RERANKER_MODEL: ""
+      CAMPUS_LLM_BASE_URL: ""
+      CAMPUS_SKILL_ROOT: /srv/project/backend/skill_packages
+      CAMPUS_MCP_SERVERS: '{}'
+      CAMPUS_ASR_URL: ""
+      CAMPUS_TTS_URL: ""
+    volumes:
+      - runtime:/srv/runtime
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+  nginx:
+    image: nginx:1.28-alpine
+    restart: unless-stopped
+    depends_on:
+      backend: {condition: service_healthy}
+    ports:
+      - "127.0.0.1:${HTTP_PORT:-8080}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+volumes:
+  runtime: {}

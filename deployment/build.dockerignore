@@ -1,0 +1,11 @@
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/.env
+**/*.env.local
+**/*.db
+**/chroma_data
+**/local
+**/secrets
+**/models
+.git

@@ -1,0 +1,12 @@
+model_id: Qwen/Qwen3-32B-AWQ
+served_model_name: Qwen3-32B-AWQ
+quant_method: awq
+weight_bits: 4
+runtime_dtype: half
+vllm_image: vllm/vllm-openai:v0.9.2
+local_mount: /models/qwen3-32b-awq
+revision: null
+notes:
+  - "权重不打包、不自动下载；首次准备时记录具体Hub commit revision和文件hash。"
+  - "AWQ权重4位不等于所有推理数据均4位；dtype和KV显存要另行规划。"
+  - "manifest用于记录，不替代实际Compose命令或GPU测试。"
