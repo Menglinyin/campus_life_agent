@@ -1,0 +1,15 @@
+settings:
+  asr_url: "${CAMPUS_ASR_URL:-}"
+  tts_url: "${CAMPUS_TTS_URL:-}"
+notes:
+  asr_contract: "POST multipart字段audio；响应JSON包含text字符串。"
+  tts_contract: "POST JSON text/voice；响应RIFF开头的WAV。"
+  not_configured: "服务地址为空时接口返回503；不会返回伪造语音结果。"
+  audio_processing: "时长校验、16kHz重采样、VAD由独立ASR服务处理；本backend不解析时长。"
+implementation_constants:
+  max_upload_bytes: 8388608
+  asr_timeout_seconds: 30
+  tts_timeout_seconds: 60
+  tts_text_characters: 1000
+  max_tts_response_bytes: 16777216
+  default_voice: default

@@ -1,0 +1,17 @@
+# 填写对应环境变量后才可启动。这里不包含真实密码或token。
+settings:
+  demo: false
+  database_url: "${CAMPUS_DATABASE_URL}"
+  user_tokens: "${CAMPUS_USER_TOKENS}"
+  redis_url: "${CAMPUS_REDIS_URL}"
+  embedding_backend: bge
+  embedding_fp16: false
+  chroma_path: ./chroma_data
+  reranker_model: BAAI/bge-reranker-v2-m3
+  llm_base_url: "${CAMPUS_LLM_BASE_URL}"
+  llm_api_key: "${CAMPUS_LLM_API_KEY:-local}"
+  llm_model: "${CAMPUS_LLM_MODEL:-Qwen3-32B-AWQ}"
+notes:
+  prerequisites: "MySQL、Redis、vLLM、可选RAG依赖和模型权重需另外准备。"
+  fp16: "默认关闭；仅在目标GPU模型验证后开启。"
+  mcp: "默认仍是本地工具；真实MCP由CAMPUS_MCP_SERVERS配置。"

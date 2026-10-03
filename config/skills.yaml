@@ -1,0 +1,12 @@
+settings:
+  skill_root: backend/skill_packages  # 相对项目根目录；加载器转成绝对路径
+notes:
+  compatibility: "使用已交付backend内的有效技能包，不依赖原仓库skills目录中的空SKILL.md。"
+  loading: "按意图加载正文；当前每个技能正文最多6000字符。"
+  enforcement: "技能正文是流程提示；安全白名单、日期检查和身份校验仍由代码执行。"
+implementation_constants:
+  classroom_skill: classroom-search
+  food_skill: food-recommendation
+  course_skill: course-auditing
+  secondhand_skill: secondhand-guidance
+  max_skill_characters: 6000

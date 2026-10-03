@@ -1,0 +1,2 @@
+PyYAML==6.0.3
+# 其他加载和启动依赖来自 ../backend/requirements.txt。

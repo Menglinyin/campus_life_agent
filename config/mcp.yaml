@@ -1,0 +1,16 @@
+settings:
+  mcp_servers: {}       # 空映射使用本地服务函数，不经过MCP网络
+  mcp_token: "${CAMPUS_MCP_TOKEN:-}"
+  tool_timeout: 15     # 外部MCP调用超时，秒
+notes:
+  configured_example: "真实接入请填写工具名→Server /mcp URL 的映射；服务需要另行启动。"
+  transport: "官方mcp SDK v1.9.4 Streamable HTTP；每次调用建立/关闭连接。"
+  authentication: "Server需校验服务token；X-Campus-User不能在未认证连接中当作可信身份。"
+  registration: "现有后端只允许下面5个只读工具；新增工具还需扩展后端白名单和schemas。"
+examples:
+  # 此段不生效；复制到 settings.mcp_servers 或通过环境变量配置后才接入。
+  query_classrooms: http://127.0.0.1:8100/mcp
+  query_courses: http://127.0.0.1:8100/mcp
+  search_knowledge: http://127.0.0.1:8100/mcp
+  query_secondhand: http://127.0.0.1:8100/mcp
+  recommend_dishes: http://127.0.0.1:8101/mcp

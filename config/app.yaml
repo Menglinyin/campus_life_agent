@@ -1,0 +1,9 @@
+# 默认是无需 GPU 的演示模式；生产覆盖见 profiles/production.yaml。
+settings:
+  demo: true
+  database_url: "sqlite:///./campus.db"
+  user_tokens:
+    demo-token: demo-student
+notes:
+  database: "SQLite 默认用于复现；生产 profile 使用 MySQL。相对数据库路径以 backend 为基准。"
+  auth: "固定 token 映射只适合开发；并非学院 SSO。身份由后端认证确定，不能由模型传入。"

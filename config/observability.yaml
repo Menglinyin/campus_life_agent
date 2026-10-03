@@ -1,0 +1,8 @@
+# 当前后端没有可调日志字段，所以settings为空，避免配置写了但没有生效。
+settings: {}
+notes:
+  current_logging: "后端core/logging.py固定INFO级别输出时间、级别、模块和日志文本。"
+  request_id: "每个HTTP请求生成X-Request-ID；由后端代码设置。"
+  health: "/api/health是进程存活检查，不验证所有外部服务。"
+  metrics: "本版本尚未实现Prometheus/exporter、追踪采样或正式压测统计。"
+  secrets: "配置检查只输出profile名称，不打印密码、token或完整连接串。"

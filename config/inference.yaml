@@ -1,0 +1,27 @@
+settings:
+  llm_base_url: ""     # 空值：规则演示Agent；配置http://127.0.0.1:8001/v1后调用vLLM
+  llm_api_key: "${CAMPUS_LLM_API_KEY:-local}"
+  llm_model: Qwen3-32B-AWQ
+  model_timeout: 60
+  max_tool_steps: 4
+notes:
+  deployment: "本配置仅连接推理服务，不下载模型或启动vLLM。"
+  model_name: "llm_model必须等于vLLM暴露的served-model-name，不要求等于模型目录名。"
+  planning: "LangGraph有界循环；Self-Consistency默认不在线采样。"
+implementation_constants:
+  temperature: 0.2
+  max_output_tokens: 768
+  enable_thinking: false
+  max_tools_per_step: 4
+  recursion_limit: 30
+  # vLLM部署参数不属于Backend Settings，本文件不启动或应用它们。
+  deployment_reference:
+    gpu_count: 2
+    gpu_type: RTX4090
+    tensor_parallel_size: 2
+    quantization: AWQ
+    dtype: half
+    max_model_len: 8192
+    gpu_memory_utilization: 0.90
+    max_num_seqs_starting_point: 4
+    status: "仅为待验证的部署起点，不是已测容量或吞吐量结论。"

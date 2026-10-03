@@ -1,0 +1,23 @@
+settings:
+  embedding_backend: demo
+  embedding_model: BAAI/bge-m3
+  embedding_fp16: false
+  embedding_max_tokens: 1024
+  chunk_tokens: 512
+  chunk_overlap: 64
+  chroma_path: ""
+  retrieval_k: 4
+  reranker_model: ""
+notes:
+  demo: "demo 是字符哈希测试替身；生产 profile 启用 bge，不代表相同检索质量。"
+  chroma: "设置为 ./chroma_data 才启用持久化Chroma；默认使用进程内向量索引。"
+  reranker: "设置 BAAI/bge-reranker-v2-m3 才启用模型重排。"
+  validation: "实际向量维度和输入token长度在入库前检查；超长报错，不静默截断。"
+implementation_constants:
+  # 以下是现有代码的说明，不由配置加载器传给Settings；修改需同时改代码。
+  embedding_dimension: 1024
+  embedding_batch_size: 8
+  bm25_tokenizer: jieba
+  dense_candidate_k: 20
+  bm25_candidate_k: 20
+  rrf_k: 60

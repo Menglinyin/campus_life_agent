@@ -1,0 +1,7 @@
+settings:
+  redis_url: "${CAMPUS_REDIS_URL:-}"
+  session_ttl: 259200    # 3 天，单位秒
+  history_turns: 10     # 送给模型的最近10轮，不是SQL保留期限
+notes:
+  persistence: "SQL 是主存储；Redis 缓存会话快照。缓存失效或故障后从SQL恢复。"
+  consistency: "SQL 校验归属和版本后才接受缓存；不会把3天TTL用于菜品库存或空闲状态。"
