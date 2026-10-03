@@ -1,0 +1,16 @@
+fastapi==0.115.9
+uvicorn==0.34.2
+SQLAlchemy==2.0.40
+PyMySQL==1.1.1
+pydantic-settings==2.9.1
+httpx[socks]==0.28.1
+langgraph==0.4.3
+redis==5.2.1
+numpy==2.2.5
+jieba==0.42.1
+rank-bm25==0.2.2
+jsonschema==4.23.0
+python-multipart==0.0.20
+pyecharts==2.0.8
+mcp==1.9.4
+pytest==8.3.5
