@@ -1,0 +1,14 @@
+schema_version: 1
+synthetic_only: true
+business:
+  classrooms: {path: synthetic/classrooms.csv}
+  courses: {path: synthetic/courses.csv}
+  dishes: {path: synthetic/dishes.csv}
+  secondhand: {path: synthetic/secondhand.csv}
+knowledge:
+  - {path: knowledge/public/classrooms.md, source: 合成教室查询说明, owner: public}
+  - {path: knowledge/public/auditing.md, source: 合成旁听规范, owner: public}
+  - {path: knowledge/public/dining.md, source: 合成食堂说明, owner: public}
+  - {path: knowledge/public/secondhand.md, source: 合成二手交易须知, owner: public}
+  - {path: knowledge/private/student_a.md, source: 合成用户A笔记, owner: synthetic-student-a}
+  - {path: knowledge/private/student_b.md, source: 合成用户B笔记, owner: synthetic-student-b}

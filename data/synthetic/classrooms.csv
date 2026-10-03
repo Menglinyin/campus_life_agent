@@ -1,0 +1,10 @@
+id,name,date,available,seats
+synthetic-room-20261003-1,合成教室A101,2026-10-03,true,40
+synthetic-room-20261003-2,合成教室A201,2026-10-03,false,50
+synthetic-room-20261003-3,合成教室A301,2026-10-03,true,60
+synthetic-room-20261004-1,合成教室A101,2026-10-04,true,40
+synthetic-room-20261004-2,合成教室A201,2026-10-04,false,50
+synthetic-room-20261004-3,合成教室A301,2026-10-04,true,60
+synthetic-room-20261005-1,合成教室A101,2026-10-05,true,40
+synthetic-room-20261005-2,合成教室A201,2026-10-05,false,50
+synthetic-room-20261005-3,合成教室A301,2026-10-05,true,60

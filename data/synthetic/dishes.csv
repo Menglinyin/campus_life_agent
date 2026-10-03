@@ -1,0 +1,13 @@
+id,name,date,price,spice,vegetarian,rating,available
+synthetic-dish-20261003-1,合成番茄炒蛋,2026-10-03,10,0,true,4.8,true
+synthetic-dish-20261003-2,合成微辣鸡丁,2026-10-03,15,1,false,4.7,true
+synthetic-dish-20261003-3,合成青菜套餐,2026-10-03,8,0,true,4.5,true
+synthetic-dish-20261003-4,合成辣味鱼,2026-10-03,18,2,false,4.9,false
+synthetic-dish-20261004-1,合成番茄炒蛋,2026-10-04,10,0,true,4.8,true
+synthetic-dish-20261004-2,合成微辣鸡丁,2026-10-04,15,1,false,4.7,true
+synthetic-dish-20261004-3,合成青菜套餐,2026-10-04,8,0,true,4.5,true
+synthetic-dish-20261004-4,合成辣味鱼,2026-10-04,18,2,false,4.9,false
+synthetic-dish-20261005-1,合成番茄炒蛋,2026-10-05,10,0,true,4.8,true
+synthetic-dish-20261005-2,合成微辣鸡丁,2026-10-05,15,1,false,4.7,true
+synthetic-dish-20261005-3,合成青菜套餐,2026-10-05,8,0,true,4.5,true
+synthetic-dish-20261005-4,合成辣味鱼,2026-10-05,18,2,false,4.9,false

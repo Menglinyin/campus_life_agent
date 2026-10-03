@@ -1,0 +1,7 @@
+id,name,date,room,time,auditing_allowed
+synthetic-course-20261003-1,合成人工智能导论,2026-10-03,合成教室A201,09:00,true
+synthetic-course-20261003-2,合成通信原理,2026-10-03,合成教室A201,14:00,false
+synthetic-course-20261004-1,合成人工智能导论,2026-10-04,合成教室A201,09:00,true
+synthetic-course-20261004-2,合成通信原理,2026-10-04,合成教室A201,14:00,false
+synthetic-course-20261005-1,合成人工智能导论,2026-10-05,合成教室A201,09:00,true
+synthetic-course-20261005-2,合成通信原理,2026-10-05,合成教室A201,14:00,false
