@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "services_started": 4,
+  "checks": [
+    "CLI configuration and startup",
+    "Backend Agent -> real query/recommendation MCP",
+    "Shared SQL preference filtering",
+    "Real feedback MCP idempotent replay"
+  ],
+  "mode": "demo rules, temporary SQLite, no GPU/Redis/MySQL/voice models"
+}

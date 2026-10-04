@@ -1,0 +1,1 @@
+"""Campus MCP services package."""

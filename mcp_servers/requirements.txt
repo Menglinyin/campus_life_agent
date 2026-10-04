@@ -1,0 +1,2 @@
+# Uses the same backend code and pinned SDK; includes backend test dependencies.
+-r ../backend/requirements.txt
