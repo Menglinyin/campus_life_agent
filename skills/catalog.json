@@ -1,0 +1,55 @@
+{
+  "format_version": 1,
+  "max_characters_per_skill": 6000,
+  "automatic_reference_loading": false,
+  "skills": [
+    {
+      "kind": "classrooms",
+      "name": "classroom-search",
+      "file": "classroom-search/SKILL.md",
+      "tools": [
+        "query_classrooms",
+        "search_knowledge"
+      ],
+      "references": [
+        "classroom-search/references/time-slots.md"
+      ]
+    },
+    {
+      "kind": "courses",
+      "name": "course-auditing",
+      "file": "course-auditing/SKILL.md",
+      "tools": [
+        "query_courses",
+        "search_knowledge"
+      ],
+      "references": [
+        "course-auditing/references/auditing-rules.md"
+      ]
+    },
+    {
+      "kind": "dishes",
+      "name": "food-recommendation",
+      "file": "food-recommendation/SKILL.md",
+      "tools": [
+        "recommend_dishes",
+        "search_knowledge"
+      ],
+      "references": [
+        "food-recommendation/references/dietary-preferences.md"
+      ]
+    },
+    {
+      "kind": "secondhand",
+      "name": "secondhand-guidance",
+      "file": "secondhand-guidance/SKILL.md",
+      "tools": [
+        "query_secondhand",
+        "search_knowledge"
+      ],
+      "references": [
+        "secondhand-guidance/references/trading-rules.md"
+      ]
+    }
+  ]
+}
