@@ -1,0 +1,37 @@
+# Merge with the existing project compose; no voice ports are exposed to students.
+services:
+  backend:
+    environment:
+      CAMPUS_ASR_URL: http://asr:8200/asr
+      CAMPUS_TTS_URL: http://tts:8300/tts
+    depends_on:
+      asr: {condition: service_healthy}
+      tts: {condition: service_healthy}
+  asr:
+    build:
+      context: ${VOICE_PROJECT_DIR:?Set absolute project directory}
+      dockerfile: voice/asr/Dockerfile
+    init: true
+    restart: unless-stopped
+    environment:
+      VOICE_ASR_MODEL_DIR: /models/paraformer
+      VOICE_ASR_VAD_DIR: /models/fsmn-vad
+      VOICE_ASR_PUNC_DIR: /models/ct-punc
+      VOICE_ASR_DEVICE: cpu
+      VOICE_MAX_CONCURRENCY: '1'
+    volumes:
+      - ${VOICE_MODELS_DIR:?Set absolute VOICE_MODELS_DIR}:/models:ro
+  tts:
+    build:
+      context: ${VOICE_PROJECT_DIR:?Set absolute project directory}
+      dockerfile: voice/tts/Dockerfile
+      args:
+        COSYVOICE_REF: ${COSYVOICE_REF:?Set full official CosyVoice source commit}
+    init: true
+    restart: unless-stopped
+    environment:
+      VOICE_TTS_MODEL_DIR: /models/CosyVoice-300M-SFT
+      VOICE_TTS_FP16: 'false'
+      VOICE_MAX_CONCURRENCY: '1'
+    volumes:
+      - ${VOICE_MODELS_DIR:?Set absolute VOICE_MODELS_DIR}:/models:ro

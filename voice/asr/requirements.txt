@@ -1,0 +1,4 @@
+-r ../requirements.txt
+funasr==1.2.6
+modelscope==1.20.0
+# Install a matching torch/torchaudio wheel pair separately; see README.

@@ -1,0 +1,17 @@
+{
+  "downloaded": false,
+  "plan": [
+    {
+      "key": "asr",
+      "repo_id": "funasr/SeACo-Paraformer-large",
+      "directory": "/workspace/scratch/d24ffbcf4544/campus-life-agent/models/voice/paraformer",
+      "revision": null
+    },
+    {
+      "key": "tts",
+      "repo_id": "FunAudioLLM/CosyVoice-300M-SFT",
+      "directory": "/workspace/scratch/d24ffbcf4544/campus-life-agent/models/voice/CosyVoice-300M-SFT",
+      "revision": null
+    }
+  ]
+}

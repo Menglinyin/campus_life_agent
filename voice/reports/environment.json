@@ -1,0 +1,39 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "fastapi": "0.115.9",
+    "uvicorn": "0.34.2",
+    "numpy": "2.2.5",
+    "funasr": null,
+    "modelscope": null,
+    "torch": null,
+    "torchaudio": null,
+    "PyYAML": "6.0.3"
+  },
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "paths": {
+    "asr_model_dir": {
+      "path": "/models/paraformer",
+      "exists": false
+    },
+    "asr_vad_dir": {
+      "path": null,
+      "exists": false
+    },
+    "asr_punc_dir": {
+      "path": null,
+      "exists": false
+    },
+    "tts_model_dir": {
+      "path": "/models/CosyVoice-300M-SFT",
+      "exists": false
+    },
+    "cosyvoice_source": {
+      "path": "/opt/CosyVoice",
+      "exists": false
+    }
+  },
+  "cosyvoice_commit": null,
+  "expected_commit": null,
+  "inference_tested": false
+}

@@ -1,0 +1,14 @@
+{
+  "tests": 58,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 1.744,
+  "backend_voice_regression_passed": 14,
+  "real_ffmpeg": true,
+  "real_model_inference": false,
+  "docker_build_tested": false,
+  "gpu_tested": false,
+  "transport_integration": "actual ASGI services via explicit test bridge",
+  "ffmpeg_version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers"
+}

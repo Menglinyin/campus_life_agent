@@ -1,0 +1,5 @@
+# default matches backend's fixed voice="default" request.
+# Only built-in SFT speakers are used; no user voice cloning.
+voices:
+  default: 中文女
+  mandarin_male: 中文男

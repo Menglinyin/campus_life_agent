@@ -1,0 +1,3 @@
+-r ../requirements.txt
+# First install requirements.txt from your recorded official CosyVoice checkout.
+# Do not install the unrelated PyPI package named cosyvoice.
