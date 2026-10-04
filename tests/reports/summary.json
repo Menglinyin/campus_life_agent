@@ -1,0 +1,34 @@
+{
+  "suite": "tests",
+  "tests": 83,
+  "passed": 83,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "unit": 36,
+  "integration": 47,
+  "elapsed_seconds": 3.517,
+  "backend_regression_passed": 20,
+  "real_local_mcp": true,
+  "real_local_chroma": true,
+  "real_redis": false,
+  "real_mysql": false,
+  "real_bge_qwen_asr_tts": false,
+  "command": "python -m pytest -c tests/pytest.ini tests --run-chroma -q --junitxml=tests/reports/pytest.xml",
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "pytest": "8.3.5",
+      "fastapi": "0.115.9",
+      "starlette": "0.45.3",
+      "SQLAlchemy": "2.0.40",
+      "httpx": "0.28.1",
+      "mcp": "1.9.4",
+      "langgraph": "0.4.3",
+      "numpy": "2.2.5",
+      "chromadb": "1.0.12",
+      "uvicorn": "0.34.2"
+    }
+  },
+  "started_at_shanghai": "2026-10-04T11:50:19.967688+08:00"
+}

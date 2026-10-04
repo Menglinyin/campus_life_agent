@@ -1,0 +1,89 @@
+{
+  "classrooms": [
+    {
+      "id": "room-open",
+      "name": "测试教室101",
+      "date": "2026-10-04",
+      "available": true,
+      "seats": 40
+    },
+    {
+      "id": "room-busy",
+      "name": "测试占用教室",
+      "date": "2026-10-04",
+      "available": false,
+      "seats": 50
+    },
+    {
+      "id": "room-other-day",
+      "name": "测试其他日期教室",
+      "date": "2026-10-05",
+      "available": true,
+      "seats": 30
+    }
+  ],
+  "courses": [
+    {
+      "id": "course-open",
+      "name": "测试人工智能课程",
+      "date": "2026-10-04",
+      "room": "测试202",
+      "time": "14:00",
+      "auditing_allowed": true
+    },
+    {
+      "id": "course-closed",
+      "name": "测试不开放课程",
+      "date": "2026-10-04",
+      "room": "测试203",
+      "time": "09:00",
+      "auditing_allowed": false
+    }
+  ],
+  "dishes": [
+    {
+      "id": "dish-mild",
+      "name": "测试清淡菜",
+      "date": "2026-10-04",
+      "price": 10,
+      "spice": 0,
+      "vegetarian": true,
+      "rating": 4.8,
+      "available": true
+    },
+    {
+      "id": "dish-spicy",
+      "name": "测试微辣菜",
+      "date": "2026-10-04",
+      "price": 15,
+      "spice": 1,
+      "vegetarian": false,
+      "rating": 4.6,
+      "available": true
+    },
+    {
+      "id": "dish-sold",
+      "name": "测试售罄菜",
+      "date": "2026-10-04",
+      "price": 5,
+      "spice": 0,
+      "vegetarian": true,
+      "rating": 5,
+      "available": false
+    }
+  ],
+  "secondhand": [
+    {
+      "id": "item-active",
+      "name": "测试二手台灯",
+      "price": 20,
+      "status": "active"
+    },
+    {
+      "id": "item-sold",
+      "name": "测试二手教材",
+      "price": 10,
+      "status": "sold"
+    }
+  ]
+}

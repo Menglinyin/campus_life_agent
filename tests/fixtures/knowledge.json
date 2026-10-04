@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rule-public",
+    "owner": "public",
+    "source": "测试公开规则（非真实校规）",
+    "text": "旁听规则：征得老师同意，维护课堂秩序。"
+  },
+  {
+    "id": "rule-alice",
+    "owner": "alice",
+    "source": "测试私有笔记A",
+    "text": "旁听规则 私有笔记 ALICE_ONLY"
+  },
+  {
+    "id": "rule-bob",
+    "owner": "bob",
+    "source": "测试私有笔记B",
+    "text": "旁听规则 私有笔记 BOB_ONLY"
+  }
+]

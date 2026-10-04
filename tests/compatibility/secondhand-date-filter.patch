@@ -1,0 +1,11 @@
+--- a/backend/app/mcp/executor.py
++++ b/backend/app/mcp/executor.py
+@@ -13,7 +13,7 @@
+         if url:
+             result=await self.client.call(url,name,args.model_dump(mode="json",exclude_none=True,exclude_defaults=True),user)
+             return validate_result(result)
+-        date=args.date.isoformat() if args.date else None
++        date=args.date.isoformat() if args.date and name in {"query_classrooms","query_courses","recommend_dishes"} else None
+         if name=="search_knowledge": return {"rows":self.rag.search(args.query,user)}
+         kind={"query_classrooms":"classrooms","query_courses":"courses","recommend_dishes":"dishes","query_secondhand":"secondhand"}[name]
+         rows=self.campus.list(kind,date)
