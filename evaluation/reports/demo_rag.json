@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "kind": "rag",
+  "mode": "demo",
+  "created_at": "2026-10-04T01:45:59.170181+00:00",
+  "evaluation_and_backend_code_sha256": "bfb9b568fc3a6c394eafd2ed4358c3aae14d3e722ed6ad3fe60bb6be188c87e8",
+  "dataset_sha256": "b5307d28afa63e5c34f60f1e948d2b581b4c8525a83a502066c99c60bfd21b6d",
+  "status": "completed",
+  "metrics": {
+    "recall_at_k": 1.0,
+    "precision_at_k": 0.25,
+    "mrr_at_k": 1.0,
+    "hit_at_k": 1.0,
+    "cases_total": 8,
+    "scored_queries": 6,
+    "errors": 0,
+    "unauthorized_returns": 0,
+    "latency_p50_ms": 0.4943760000060138,
+    "latency_p95_ms": 343.29911074996716
+  },
+  "cases": [
+    {
+      "id": "rag-01",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-auditing",
+        "eval-knowledge-trading",
+        "eval-knowledge-dining",
+        "eval-knowledge-room"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 527.8031140001076,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-02",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-private-a",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.6488189997071458,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-03",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-trading",
+        "eval-knowledge-dining",
+        "eval-knowledge-auditing",
+        "eval-knowledge-room"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.48216799996225745,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-04",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-room",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing",
+        "eval-knowledge-dining"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.4382120000627765,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-05",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-a",
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.5142670001987426,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-06",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-b",
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.5065840000497701,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-cross-user",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-a",
+        "eval-knowledge-dining"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 0.3611659999478434,
+      "metrics": null,
+      "no_answer_returns": 2
+    },
+    {
+      "id": "rag-no-answer",
+      "status": "ok",
+      "retrieved_ids": [],
+      "unauthorized_count": 0,
+      "latency_ms": 0.324318999901152,
+      "metrics": null,
+      "no_answer_returns": 0
+    }
+  ],
+  "configuration": {
+    "k": 4,
+    "chroma": false,
+    "embedding_model": "BAAI/bge-m3",
+    "embedding_revision": null,
+    "reranker": null,
+    "embedding_fp16": false,
+    "embedding_max_tokens": 1024,
+    "chunk_count": 6,
+    "build_ms": 0.8476900002278853
+  },
+  "limitations": [
+    "Synthetic pre-chunked corpus; not document parsing evaluation.",
+    "Demo character hashing is not BGE semantic quality.",
+    "No-answer returned count is diagnostic, not a guaranteed rejection threshold.",
+    "Recall means macro mean over all labeled queries; retrieval errors count as zero.",
+    "Latency is local sequential search including embedding; not production capacity."
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "eval-knowledge-auditing",
+    "source": "合成旁听规范",
+    "owner": "public",
+    "text": "旁听规范：旁听课程须先征得任课老师同意，不影响正常课堂秩序。"
+  },
+  {
+    "id": "eval-knowledge-dining",
+    "source": "合成食堂规则",
+    "owner": "public",
+    "text": "食堂规则：菜品标示价格与辣度，售罄菜品不参与推荐，素食偏好用于筛选。"
+  },
+  {
+    "id": "eval-knowledge-trading",
+    "source": "合成交易规范",
+    "owner": "public",
+    "text": "二手交易规范：当面检查台灯状态，不通过助手支付，不提前转账。"
+  },
+  {
+    "id": "eval-knowledge-room",
+    "source": "合成教室须知",
+    "owner": "public",
+    "text": "教室须知：查询空闲教室需要明确日期，座位只代表教室容量。"
+  },
+  {
+    "id": "eval-private-a",
+    "source": "合成青松资料",
+    "owner": "eval-a",
+    "text": "青松资料私有规则：青松实验笔记仅供甲用户使用，研究编号青松七号。"
+  },
+  {
+    "id": "eval-private-b",
+    "source": "合成海棠资料",
+    "owner": "eval-b",
+    "text": "海棠资料私有规则：海棠实验笔记仅供乙用户使用，研究编号海棠九号。"
+  }
+]

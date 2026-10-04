@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "kind": "voice",
+  "mode": "offline",
+  "created_at": "2026-10-04T01:45:58.096946+00:00",
+  "evaluation_and_backend_code_sha256": "bfb9b568fc3a6c394eafd2ed4358c3aae14d3e722ed6ad3fe60bb6be188c87e8",
+  "dataset_sha256": "ed828daecd2f939c825fd6c9a47fd06efe130ebc8da753e7e1e8880e1e4f41ee",
+  "task": "asr",
+  "status": "completed",
+  "cases": [
+    {
+      "id": "voice-zh-clean",
+      "status": "ok",
+      "character_edits": 0,
+      "reference_characters": 8,
+      "word_edits": 0,
+      "reference_words": 1
+    },
+    {
+      "id": "voice-zh-error",
+      "status": "ok",
+      "character_edits": 1,
+      "reference_characters": 7,
+      "word_edits": 1,
+      "reference_words": 1
+    },
+    {
+      "id": "voice-en",
+      "status": "ok",
+      "character_edits": 1,
+      "reference_characters": 14,
+      "word_edits": 1,
+      "reference_words": 3
+    },
+    {
+      "id": "voice-empty-ref",
+      "status": "ok",
+      "character_edits": 0,
+      "reference_characters": 0,
+      "word_edits": 0,
+      "reference_words": 0
+    }
+  ],
+  "metrics": {
+    "cases_total": 4,
+    "cases_scored": 4,
+    "errors": 0,
+    "skipped": 0,
+    "character_edits": 2,
+    "reference_characters": 29,
+    "word_edits": 2,
+    "reference_words": 5,
+    "cer": 0.06896551724137931,
+    "wer_whitespace": 0.4,
+    "latency_p95_ms": null,
+    "end_to_end_rtf_mean": null
+  },
+  "limitations": [
+    "Offline predictions are supplied text, not speech recognition measurements.",
+    "Normalize NFKC/lowercase/remove punctuation; CER removes spaces; WER uses whitespace words.",
+    "Whitespace WER is not Chinese segmented WER; CER is the primary Chinese metric.",
+    "Empty reference denominator yields null; insertions are retained in aggregate numerators.",
+    "TTS WAV validity/latency does not measure MOS, intelligibility or first audio latency.",
+    "End-to-end RTF includes HTTP and backend overhead, not model compute alone."
+  ],
+  "predictions_sha256": "86d4681247baf892f647b5e9422c8eeeb4b0844a21cc6037f1085c2ede8d3e95"
+}

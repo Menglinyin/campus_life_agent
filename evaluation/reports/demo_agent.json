@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "kind": "agent",
+  "mode": "demo",
+  "created_at": "2026-10-04T01:46:00.207669+00:00",
+  "evaluation_and_backend_code_sha256": "bfb9b568fc3a6c394eafd2ed4358c3aae14d3e722ed6ad3fe60bb6be188c87e8",
+  "dataset_sha256": "28949367bf2ff6c3c3b0d7ea858817a4c4c917c6cd2ef083004b5a130a560fba",
+  "status": "passed",
+  "cases": [
+    {
+      "id": "agent-classroom",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_classrooms:count": true,
+            "rows:query_classrooms:required": true,
+            "rows:query_classrooms:excluded": true,
+            "rows:query_classrooms:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 14.108273000147165
+        }
+      ]
+    },
+    {
+      "id": "agent-multitool",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_classrooms:count": true,
+            "rows:query_classrooms:required": true,
+            "rows:query_classrooms:excluded": true,
+            "rows:query_classrooms:fields": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 11.14027099993109
+        }
+      ]
+    },
+    {
+      "id": "agent-missing-date",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "answer_contains": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 8.684006999828853
+        },
+        {
+          "step": 2,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_classrooms:count": true,
+            "rows:query_classrooms:required": true,
+            "rows:query_classrooms:excluded": true,
+            "rows:query_classrooms:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 5.793137000182469
+        },
+        {
+          "step": 3,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "version": true,
+            "message_count": true
+          },
+          "latency_ms": 1.855802000136464
+        }
+      ]
+    },
+    {
+      "id": "agent-preference-override",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 11.242010000387381
+        },
+        {
+          "step": 2,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 8.196675999897707
+        },
+        {
+          "step": 3,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "preferences": true
+          },
+          "latency_ms": 1.753216999986762
+        }
+      ]
+    },
+    {
+      "id": "agent-budget",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "rows:recommend_dishes:budget": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 11.490060000141966
+        }
+      ]
+    },
+    {
+      "id": "agent-vegetarian",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 10.157437000088976
+        }
+      ]
+    },
+    {
+      "id": "agent-courses",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_courses:count": true,
+            "rows:query_courses:required": true,
+            "rows:query_courses:excluded": true,
+            "rows:query_courses:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 10.293062000073405
+        }
+      ]
+    },
+    {
+      "id": "agent-secondhand",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_secondhand:count": true,
+            "rows:query_secondhand:required": true,
+            "rows:query_secondhand:excluded": true,
+            "rows:query_secondhand:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 8.644473000003927
+        }
+      ]
+    },
+    {
+      "id": "agent-rag",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "answer_contains": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 432.4452949999795
+        }
+      ]
+    },
+    {
+      "id": "agent-chart",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:recommend_dishes:count": true,
+            "rows:recommend_dishes:required": true,
+            "rows:recommend_dishes:excluded": true,
+            "rows:recommend_dishes:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 9.61984500008839
+        },
+        {
+          "step": 2,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "chart_prices": true
+          },
+          "latency_ms": 3.398512000330811
+        }
+      ]
+    },
+    {
+      "id": "agent-ownership",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 200,
+          "passed": true,
+          "checks": {
+            "http_status": true,
+            "tools": true,
+            "rows:query_classrooms:count": true,
+            "rows:query_classrooms:required": true,
+            "rows:query_classrooms:excluded": true,
+            "rows:query_classrooms:fields": true,
+            "session_id": true,
+            "message_id": true
+          },
+          "latency_ms": 9.831033999944339
+        },
+        {
+          "step": 2,
+          "status_code": 404,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 1.7972139999073988
+        },
+        {
+          "step": 3,
+          "status_code": 404,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 2.248265000162064
+        },
+        {
+          "step": 4,
+          "status_code": 404,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 1.929121999637573
+        },
+        {
+          "step": 5,
+          "status_code": 404,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 2.1588399999927788
+        }
+      ]
+    },
+    {
+      "id": "agent-invalid-input",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "status_code": 422,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 2.2037179996914347
+        },
+        {
+          "step": 2,
+          "status_code": 422,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 6.482497999968473
+        },
+        {
+          "step": 3,
+          "status_code": 401,
+          "passed": true,
+          "checks": {
+            "http_status": true
+          },
+          "latency_ms": 1.4978819999669213
+        }
+      ]
+    }
+  ],
+  "observed_response_modes": [
+    "demo"
+  ],
+  "metrics": {
+    "scenarios_total": 12,
+    "scenarios_passed": 12,
+    "scenario_pass_rate": 1.0,
+    "steps_total": 23,
+    "steps_passed": 23,
+    "latency_p50_ms": 8.196675999897707,
+    "latency_p95_ms": 13.846451700146641
+  },
+  "limitations": [
+    "Synthetic fixed-date fixture contract only; not real campus coverage.",
+    "Every scenario gets a fresh demo DB; HTTP mode resets A preferences before each case.",
+    "Rules/row correctness, not a model reasoning accuracy benchmark.",
+    "Backend fallback tool routing and deterministic business formatting remain enabled.",
+    "Latency includes endpoint/client overhead; not GPU load capacity.",
+    "Remote reset requests are excluded from step metrics; do not run on personal/production data."
+  ]
+}

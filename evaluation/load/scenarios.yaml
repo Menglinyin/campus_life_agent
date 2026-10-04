@@ -1,0 +1,28 @@
+schema_version: 1
+# Fixed synthetic fixture date, not the real campus schedule.
+scenarios:
+  - id: classroom
+    weight: 4
+    message: "2026-10-04 查询空闲教室"
+    expected_tools: [query_classrooms]
+    minimum_rows: {query_classrooms: 1}
+  - id: multitool
+    weight: 3
+    message: "2026-10-04 查询空闲教室，并推荐食堂菜品"
+    expected_tools: [query_classrooms, recommend_dishes]
+    minimum_rows: {query_classrooms: 1, recommend_dishes: 1}
+  - id: courses
+    weight: 1
+    message: "2026-10-04 查询旁听课程"
+    expected_tools: [query_courses]
+    minimum_rows: {query_courses: 1}
+  - id: secondhand
+    weight: 1
+    message: "查询二手台灯"
+    expected_tools: [query_secondhand]
+    minimum_rows: {query_secondhand: 1}
+  - id: rag
+    weight: 1
+    message: "旁听规范是什么"
+    expected_tools: [search_knowledge]
+    minimum_rows: {search_knowledge: 1}

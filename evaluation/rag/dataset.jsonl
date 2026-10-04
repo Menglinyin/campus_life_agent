@@ -1,0 +1,8 @@
+{"id": "rag-01", "query": "旁听规范：旁听课程须先征得任课老师同意，不影响正常课堂秩序。", "user": "eval-a", "relevant_ids": ["eval-knowledge-auditing"]}
+{"id": "rag-02", "query": "食堂规则：菜品标示价格与辣度，售罄菜品不参与推荐，素食偏好用于筛选。", "user": "eval-a", "relevant_ids": ["eval-knowledge-dining"]}
+{"id": "rag-03", "query": "二手交易规范：当面检查台灯状态，不通过助手支付，不提前转账。", "user": "eval-a", "relevant_ids": ["eval-knowledge-trading"]}
+{"id": "rag-04", "query": "教室须知：查询空闲教室需要明确日期，座位只代表教室容量。", "user": "eval-a", "relevant_ids": ["eval-knowledge-room"]}
+{"id": "rag-05", "query": "青松资料私有规则：青松实验笔记仅供甲用户使用，研究编号青松七号。", "user": "eval-a", "relevant_ids": ["eval-private-a"]}
+{"id": "rag-06", "query": "海棠资料私有规则：海棠实验笔记仅供乙用户使用，研究编号海棠九号。", "user": "eval-b", "relevant_ids": ["eval-private-b"]}
+{"id": "rag-cross-user", "query": "海棠资料私有规则 海棠九号", "user": "eval-a", "relevant_ids": []}
+{"id": "rag-no-answer", "query": "火星飞船发动机推力计算", "user": "eval-a", "relevant_ids": []}

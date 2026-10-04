@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "load",
+  "status": "not_run",
+  "created_at": null,
+  "metadata": {
+    "model_revision": null,
+    "hardware": null,
+    "effective_parameters": {},
+    "declared_scope": null,
+    "cpu_ram_monitor_enabled": null
+  },
+  "measurement_seconds": null,
+  "metrics": {
+    "requests_total": null,
+    "requests_successful": null,
+    "requests_failed": null,
+    "success_rate": null,
+    "completed_chat_rps": null,
+    "e2e_p50_ms": null,
+    "e2e_p95_ms": null,
+    "e2e_p99_ms": null,
+    "gpu_0_peak_gib": null,
+    "gpu_1_peak_gib": null,
+    "ttft_p95_ms": null,
+    "model_queue_peak": null
+  },
+  "http_status_counts": {},
+  "observed_response_modes": {},
+  "latency_samples_retained": 0,
+  "latency_samples_dropped": 0,
+  "limitations": [
+    "未运行；null表示未测量，不是0。"
+  ]
+}

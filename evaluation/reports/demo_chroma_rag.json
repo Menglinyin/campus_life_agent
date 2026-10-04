@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "kind": "rag",
+  "mode": "demo",
+  "created_at": "2026-10-04T01:45:59.090771+00:00",
+  "evaluation_and_backend_code_sha256": "bfb9b568fc3a6c394eafd2ed4358c3aae14d3e722ed6ad3fe60bb6be188c87e8",
+  "dataset_sha256": "b5307d28afa63e5c34f60f1e948d2b581b4c8525a83a502066c99c60bfd21b6d",
+  "status": "completed",
+  "metrics": {
+    "recall_at_k": 1.0,
+    "precision_at_k": 0.25,
+    "mrr_at_k": 1.0,
+    "hit_at_k": 1.0,
+    "cases_total": 8,
+    "scored_queries": 6,
+    "errors": 0,
+    "unauthorized_returns": 0,
+    "latency_p50_ms": 2.194889000065814,
+    "latency_p95_ms": 303.92642375002174
+  },
+  "cases": [
+    {
+      "id": "rag-01",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-auditing",
+        "eval-knowledge-trading",
+        "eval-knowledge-dining",
+        "eval-knowledge-room"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 463.1101459999627,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-02",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-private-a",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 8.299511000132043,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-03",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-trading",
+        "eval-knowledge-dining",
+        "eval-knowledge-auditing",
+        "eval-knowledge-room"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 2.824864999638521,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-04",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-room",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing",
+        "eval-knowledge-dining"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 2.2356250001394073,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-05",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-a",
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 2.1541529999922204,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-06",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-b",
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 2.065870000024006,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.25,
+        "mrr_at_k": 1.0,
+        "hit_at_k": 1
+      },
+      "no_answer_returns": null
+    },
+    {
+      "id": "rag-cross-user",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-private-a",
+        "eval-knowledge-dining",
+        "eval-knowledge-trading",
+        "eval-knowledge-auditing"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 1.864665000084642,
+      "metrics": null,
+      "no_answer_returns": 4
+    },
+    {
+      "id": "rag-no-answer",
+      "status": "ok",
+      "retrieved_ids": [
+        "eval-knowledge-room",
+        "eval-knowledge-dining",
+        "eval-knowledge-auditing",
+        "eval-knowledge-trading"
+      ],
+      "unauthorized_count": 0,
+      "latency_ms": 1.9536099998731515,
+      "metrics": null,
+      "no_answer_returns": 4
+    }
+  ],
+  "configuration": {
+    "k": 4,
+    "chroma": true,
+    "embedding_model": "BAAI/bge-m3",
+    "embedding_revision": null,
+    "reranker": null,
+    "embedding_fp16": false,
+    "embedding_max_tokens": 1024,
+    "chunk_count": 6,
+    "build_ms": 426.6386480003348
+  },
+  "limitations": [
+    "Synthetic pre-chunked corpus; not document parsing evaluation.",
+    "Demo character hashing is not BGE semantic quality.",
+    "No-answer returned count is diagnostic, not a guaranteed rejection threshold.",
+    "Recall means macro mean over all labeled queries; retrieval errors count as zero.",
+    "Latency is local sequential search including embedding; not production capacity."
+  ]
+}

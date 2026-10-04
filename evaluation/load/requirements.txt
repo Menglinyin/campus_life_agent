@@ -1,0 +1,4 @@
+# Separate venv recommended: Locust monkey-patches networking with gevent.
+locust==2.43.2
+PyYAML==6.0.3
+jsonschema==4.23.0

@@ -1,0 +1,4 @@
+{"id": "voice-zh-clean", "reference": "今天查询空闲教室。", "audio_path": null}
+{"id": "voice-zh-error", "reference": "推荐不辣的菜品", "audio_path": null}
+{"id": "voice-en", "reference": "find a classroom", "audio_path": null}
+{"id": "voice-empty-ref", "reference": "", "audio_path": null}
