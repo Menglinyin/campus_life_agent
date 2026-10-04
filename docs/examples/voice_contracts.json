@@ -1,0 +1,20 @@
+{
+  "status": "adapter_contract_only_upstream_not_implemented",
+  "asr": {
+    "method": "POST",
+    "content_type": "multipart/form-data",
+    "file_field": "audio",
+    "response_json": {
+      "text": "今天查空闲教室"
+    }
+  },
+  "tts": {
+    "method": "POST",
+    "request_json": {
+      "text": "示例播报文字",
+      "voice": "default"
+    },
+    "response_content_type": "audio/wav",
+    "response_body": "binary RIFF WAV, not this string"
+  }
+}

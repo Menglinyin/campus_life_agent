@@ -1,0 +1,154 @@
+{
+  "properties": {
+    "demo": {
+      "default": true,
+      "title": "Demo",
+      "type": "boolean"
+    },
+    "database_url": {
+      "default": "sqlite:///./campus.db",
+      "title": "Database Url",
+      "type": "string"
+    },
+    "user_tokens": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "User Tokens",
+      "type": "object",
+      "description": "Credentials: configure locally."
+    },
+    "redis_url": {
+      "default": "",
+      "title": "Redis Url",
+      "type": "string"
+    },
+    "session_ttl": {
+      "default": 259200,
+      "minimum": 60,
+      "title": "Session Ttl",
+      "type": "integer"
+    },
+    "history_turns": {
+      "default": 10,
+      "maximum": 30,
+      "minimum": 1,
+      "title": "History Turns",
+      "type": "integer"
+    },
+    "embedding_backend": {
+      "default": "demo",
+      "title": "Embedding Backend",
+      "type": "string"
+    },
+    "embedding_model": {
+      "default": "BAAI/bge-m3",
+      "title": "Embedding Model",
+      "type": "string"
+    },
+    "embedding_fp16": {
+      "default": false,
+      "title": "Embedding Fp16",
+      "type": "boolean"
+    },
+    "embedding_max_tokens": {
+      "default": 1024,
+      "maximum": 8192,
+      "minimum": 128,
+      "title": "Embedding Max Tokens",
+      "type": "integer"
+    },
+    "chunk_tokens": {
+      "default": 512,
+      "minimum": 32,
+      "title": "Chunk Tokens",
+      "type": "integer"
+    },
+    "chunk_overlap": {
+      "default": 64,
+      "minimum": 0,
+      "title": "Chunk Overlap",
+      "type": "integer"
+    },
+    "chroma_path": {
+      "default": "",
+      "title": "Chroma Path",
+      "type": "string"
+    },
+    "retrieval_k": {
+      "default": 4,
+      "maximum": 20,
+      "minimum": 1,
+      "title": "Retrieval K",
+      "type": "integer"
+    },
+    "reranker_model": {
+      "default": "",
+      "title": "Reranker Model",
+      "type": "string"
+    },
+    "llm_base_url": {
+      "default": "",
+      "title": "Llm Base Url",
+      "type": "string"
+    },
+    "llm_api_key": {
+      "title": "Llm Api Key",
+      "type": "string",
+      "description": "Credentials: configure locally."
+    },
+    "llm_model": {
+      "default": "Qwen3-32B-AWQ",
+      "title": "Llm Model",
+      "type": "string"
+    },
+    "max_tool_steps": {
+      "default": 4,
+      "maximum": 8,
+      "minimum": 1,
+      "title": "Max Tool Steps",
+      "type": "integer"
+    },
+    "model_timeout": {
+      "default": 60,
+      "title": "Model Timeout",
+      "type": "number"
+    },
+    "tool_timeout": {
+      "default": 15,
+      "title": "Tool Timeout",
+      "type": "number"
+    },
+    "mcp_servers": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "Mcp Servers",
+      "type": "object"
+    },
+    "mcp_token": {
+      "title": "Mcp Token",
+      "type": "string",
+      "description": "Credentials: configure locally."
+    },
+    "skill_root": {
+      "default": "backend/skill_packages",
+      "format": "path",
+      "title": "Skill Root",
+      "type": "string"
+    },
+    "asr_url": {
+      "default": "",
+      "title": "Asr Url",
+      "type": "string"
+    },
+    "tts_url": {
+      "default": "",
+      "title": "Tts Url",
+      "type": "string"
+    }
+  },
+  "title": "Settings",
+  "type": "object"
+}

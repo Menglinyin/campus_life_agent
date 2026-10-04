@@ -1,0 +1,44 @@
+### 本机HTTP客户端（例如支持.http文件的编辑器）
+@base = http://127.0.0.1:8000
+@token = demo-token
+@session = REPLACE_WITH_RETURNED_SESSION_UUID
+@message = REPLACE_WITH_RETURNED_ASSISTANT_MESSAGE_UUID
+
+### 存活
+GET {{base}}/api/health
+
+### 创建会话
+POST {{base}}/api/chat
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"message":"今天查空闲教室，并推荐15元内不辣的菜"}
+
+### 同一会话补充条件（先替换session）
+POST {{base}}/api/chat
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"message":"只吃素","session_id":"{{session}}"}
+
+### 查看历史
+GET {{base}}/api/sessions/{{session}}/messages
+Authorization: Bearer {{token}}
+
+### 偏好
+GET {{base}}/api/preferences
+Authorization: Bearer {{token}}
+
+### 菜品图表（替换message）
+POST {{base}}/api/charts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"message_id":"{{message}}"}
+
+### 播报（必须先部署上游TTS）
+POST {{base}}/api/voice/synthesize
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"message_id":"{{message}}"}

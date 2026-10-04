@@ -1,0 +1,58 @@
+{
+  "status": "not_run",
+  "measured_at": null,
+  "environment": {
+    "archive_sha256": null,
+    "git_commit": null,
+    "python": null,
+    "cpu": null,
+    "ram_gib": null,
+    "gpus": [],
+    "driver_version": null,
+    "docker_version": null,
+    "vllm_version": null,
+    "model_revision": null,
+    "effective_parameters": {},
+    "sql_backend": null,
+    "redis_backend": null,
+    "embedding_backend": null,
+    "knowledge_chunk_count": null
+  },
+  "run": {
+    "scenario": null,
+    "concurrent_clients": null,
+    "arrival_rate_rps": null,
+    "warmup_seconds": null,
+    "steady_seconds": null,
+    "repetitions": null,
+    "input_tokens_distribution": null,
+    "output_tokens_distribution": null
+  },
+  "metrics": {
+    "requests_total": null,
+    "requests_successful": null,
+    "success_rate": null,
+    "http_error_counts": null,
+    "timeout_count": null,
+    "e2e_p50_ms": null,
+    "e2e_p95_ms": null,
+    "e2e_p99_ms": null,
+    "completed_chat_rps": null,
+    "model_requests_total": null,
+    "ttft_p95_ms": null,
+    "output_tokens_per_second": null,
+    "gpu_0_peak_gib": null,
+    "gpu_1_peak_gib": null,
+    "model_queue_peak": null,
+    "redis_used_memory_bytes": null,
+    "rag_recall_at_4": null,
+    "tool_result_accuracy": null,
+    "unauthorized_return_count": null
+  },
+  "adjustments": [],
+  "notes": [
+    "未运行真实负载测试，null表示未测量，不是0。",
+    "TTFT需要独立流式探针；现有chat不提供该指标。",
+    "SESSION_TTL=259200源于学院场景要求，不是压测调整结论。"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "rows": [
+    {
+      "id": "synthetic-room-example",
+      "name": "合成教室101",
+      "date": "2026-10-04",
+      "available": true,
+      "seats": 40
+    }
+  ]
+}
