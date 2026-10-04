@@ -1,0 +1,1 @@
+"""Disposable migration verification."""

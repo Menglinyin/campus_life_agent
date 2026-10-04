@@ -1,0 +1,1 @@
+"""Immutable schema revision snapshots."""
