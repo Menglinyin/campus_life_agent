@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks": [
+    "init preview without file",
+    "actual Alembic upgrade",
+    "business CSV preview/apply",
+    "knowledge chunk+embedding+SQL",
+    "public BM25 validation",
+    "embedding dimension/length",
+    "redacted parameters TTL=259200",
+    "schema matches head",
+    "real HTTP liveness",
+    "real HTTP Agent chat and price chart"
+  ],
+  "embedding_backend": "demo_hash_test_double",
+  "sql": "temporary SQLite",
+  "model_download": "not run",
+  "mcp_remote": "not run",
+  "gpu": "not run",
+  "benchmark": false
+}

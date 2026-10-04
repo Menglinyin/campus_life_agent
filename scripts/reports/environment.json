@@ -1,0 +1,83 @@
+{
+  "python": "3.12.14",
+  "supported_python": true,
+  "dependencies": {
+    "fastapi": {
+      "expected": "0.115.9",
+      "installed": "0.115.9"
+    },
+    "uvicorn": {
+      "expected": "0.34.2",
+      "installed": "0.34.2"
+    },
+    "SQLAlchemy": {
+      "expected": "2.0.40",
+      "installed": "2.0.40"
+    },
+    "PyMySQL": {
+      "expected": "1.1.1",
+      "installed": "1.1.1"
+    },
+    "pydantic-settings": {
+      "expected": "2.9.1",
+      "installed": "2.9.1"
+    },
+    "httpx": {
+      "expected": "0.28.1",
+      "installed": "0.28.1"
+    },
+    "langgraph": {
+      "expected": "0.4.3",
+      "installed": "0.4.3"
+    },
+    "redis": {
+      "expected": "5.2.1",
+      "installed": "5.2.1"
+    },
+    "numpy": {
+      "expected": "2.2.5",
+      "installed": "2.2.5"
+    },
+    "jieba": {
+      "expected": "0.42.1",
+      "installed": "0.42.1"
+    },
+    "rank-bm25": {
+      "expected": "0.2.2",
+      "installed": "0.2.2"
+    },
+    "jsonschema": {
+      "expected": "4.23.0",
+      "installed": "4.23.0"
+    },
+    "python-multipart": {
+      "expected": "0.0.20",
+      "installed": "0.0.20"
+    },
+    "pyecharts": {
+      "expected": "2.0.8",
+      "installed": "2.0.8"
+    },
+    "mcp": {
+      "expected": "1.9.4",
+      "installed": "1.9.4"
+    },
+    "PyYAML": {
+      "expected": "6.0.3",
+      "installed": "6.0.3"
+    },
+    "alembic": {
+      "expected": "1.16.5",
+      "installed": "1.16.5"
+    }
+  },
+  "missing_dependencies": [],
+  "version_mismatches": [],
+  "missing_folders": [],
+  "config": "not_checked",
+  "gpu": "not_probed",
+  "network_probed": false,
+  "database_connected": false,
+  "models_loaded": false,
+  "ok": true
+}

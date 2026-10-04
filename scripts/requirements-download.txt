@@ -1,0 +1,2 @@
+# Optional model downloader. No weights are installed by pip.
+huggingface-hub==0.33.4

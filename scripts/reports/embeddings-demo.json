@@ -1,0 +1,17 @@
+{
+  "backend": "demo",
+  "test_double": true,
+  "chunks": 1,
+  "dimension": 1024,
+  "dtype": "float32",
+  "max_input_units_including_special_tokens": 19,
+  "units": "demo_characters_plus_two",
+  "length_limit": 1024,
+  "finite": true,
+  "norm_min": 1.0,
+  "norm_max": 1.0,
+  "model_fp16_requested": false,
+  "text_or_vectors_exported": false,
+  "database_connected": false,
+  "truncation_used": false
+}

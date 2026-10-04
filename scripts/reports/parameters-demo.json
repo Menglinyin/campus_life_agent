@@ -1,0 +1,47 @@
+{
+  "profile": "demo",
+  "settings": {
+    "demo": true,
+    "session_ttl": 259200,
+    "history_turns": 10,
+    "embedding_backend": "demo",
+    "embedding_model": "BAAI/bge-m3",
+    "embedding_fp16": false,
+    "embedding_max_tokens": 1024,
+    "chunk_tokens": 512,
+    "chunk_overlap": 64,
+    "retrieval_k": 4,
+    "llm_model": "Qwen3-32B-AWQ",
+    "max_tool_steps": 4,
+    "model_timeout": 60.0,
+    "tool_timeout": 15.0
+  },
+  "configured": {
+    "redis": false,
+    "chroma": false,
+    "llm": false,
+    "reranker": false,
+    "asr": false,
+    "tts": false
+  },
+  "mcp_tool_count": 0,
+  "implementation_constants_reference": {
+    "rag.yaml": {
+      "embedding_dimension": 1024,
+      "embedding_batch_size": 8,
+      "bm25_tokenizer": "jieba",
+      "dense_candidate_k": 20,
+      "bm25_candidate_k": 20,
+      "rrf_k": 60
+    },
+    "inference.yaml": {
+      "temperature": 0.2,
+      "max_output_tokens": 768,
+      "enable_thinking": false,
+      "max_tools_per_step": 4,
+      "recursion_limit": 30
+    }
+  },
+  "reference_values_are_measured_performance": false,
+  "credentials_exported": false
+}
