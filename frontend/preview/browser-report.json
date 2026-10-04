@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "playwright_version": "1.62.1",
+  "chromium_version": "143.0.7499.0",
+  "portable_browser": true,
+  "checks": [
+    "demo_connection",
+    "real_chat_multitool_preferences",
+    "real_price_chart",
+    "unconfigured_tts_shown",
+    "fake_mic_real_worklet_wav_no_autosend",
+    "date_clarification",
+    "real_history_restore",
+    "local_metadata_only",
+    "identity_switch_and_foreign_session_denied",
+    "text_only_xss_resistance",
+    "mobile_layout_and_sidebar",
+    "logout_cancels_late_response"
+  ],
+  "page_errors": [],
+  "limitations": [
+    "Temporary real backend, demo rules and SQLite.",
+    "Microphone uses Chromium fake device; ASR response is intercepted synthetic text.",
+    "XSS and delayed-response cases use intercepted synthetic replies.",
+    "No real acoustic model, GPU, mobile device, TLS or Docker validation."
+  ]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#284f42">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>校园生活助手 · Campus Companion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="vendor/echarts.min.js" defer></script>
+  <script src="js/chat.js" type="module"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="会话与偏好">
+      <a class="brand" href="./" aria-label="校园生活助手首页"><span class="brand-symbol" aria-hidden="true">✳</span><span>校园生活助手<small>CAMPUS COMPANION</small></span></a>
+      <button class="new-chat" id="new-chat" type="button"><span aria-hidden="true">＋</span> 开始新对话</button>
+      <section class="history-section"><div class="section-heading"><h2>最近对话</h2><button class="text-button" id="restore-open" type="button">恢复</button></div><ul id="sessions" class="sessions"></ul><p class="empty-history" id="history-empty">从一个小问题开始吧。</p></section>
+      <section class="preferences"><div class="section-heading"><h2>我的饮食偏好</h2><button id="refresh-preferences" class="text-button" type="button">刷新</button></div><div id="preference-values" class="preference-values"><span>对话中告诉我你的口味</span></div><p>例如：“不吃辣，预算15元”。</p></section>
+      <div class="sidebar-footer"><span class="avatar" aria-hidden="true">C</span><div><strong>今天，也照顾好自己</strong><small>让校园里的小事轻松一点</small></div></div>
+      <button id="clear-local" class="text-button clear-local" type="button">清除本机对话列表</button>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="topbar-left"><button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="展开会话侧栏" aria-expanded="false">☰</button><span>你的校园日常，一问就好</span></div><div class="topbar-right"><span id="connection-status" class="connection-status">尚未连接</span><button id="connection-open" class="text-button" type="button">连接设置</button><button id="logout" class="text-button" type="button" hidden>退出</button></div></header>
+      <div class="conversation-scroll" id="conversation-scroll">
+        <section id="welcome" class="welcome">
+          <div class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> YOUR EVERYDAY CAMPUS ASSISTANT</div>
+          <h1>把校园生活，<br><span>问得简单一点。</span></h1>
+          <p class="welcome-description">空闲教室、旁听课程、今天吃什么，<br class="desktop-break">还有值得发现的二手好物。告诉我你需要什么。</p>
+          <div class="quick-grid">
+            <button class="quick-card" data-prompt="今天查询空闲教室" type="button"><span class="card-icon" aria-hidden="true">▦</span><strong>找个自习角落</strong><span>查询今天的空闲教室</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+            <button class="quick-card" data-prompt="今天查询可旁听课程" type="button"><span class="card-icon peach" aria-hidden="true">⌘</span><strong>听一堂新课</strong><span>发现可以旁听的课程</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+            <button class="quick-card" data-prompt="今天推荐食堂菜品" type="button"><span class="card-icon gold" aria-hidden="true">◒</span><strong>解决吃饭难题</strong><span>按口味和预算选菜品</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+            <button class="quick-card" data-prompt="查询在售二手物品" type="button"><span class="card-icon blue" aria-hidden="true">◇</span><strong>让好物再出发</strong><span>看看校园里的二手物品</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <div class="welcome-note"><span aria-hidden="true">✦</span> 也可以一起问：“今天找个教室，再推荐不辣的菜。”</div>
+        </section>
+        <section id="messages" class="messages" aria-label="对话内容" aria-live="polite" aria-relevant="additions"></section>
+      </div>
+      <div class="composer-area">
+        <div class="composer-hint" id="composer-hint" role="status">描述你的需求，或从上面的建议开始。</div>
+        <form class="composer" id="chat-form">
+          <label class="sr-only" for="message-input">输入消息</label><textarea id="message-input" maxlength="2000" rows="2" placeholder="今天有什么可以帮到你？"></textarea>
+          <div class="composer-toolbar"><div class="composer-tools"><label class="date-control"><span aria-hidden="true">▦</span><span class="sr-only">指定查询日期（选填）</span><input id="query-date" type="date" aria-label="指定查询日期（选填）"></label><button id="record-button" class="tool-button" type="button" aria-label="开始录音">◉ <span>语音</span></button><label class="tool-button upload-label" for="audio-file">↑ <span>上传音频</span></label><input id="audio-file" type="file" accept="audio/*,.wav" hidden></div><div class="send-tools"><span id="char-count" class="char-count">0/2000</span><button id="send-button" type="submit" class="send-button" aria-label="发送消息">发送 <span aria-hidden="true">↑</span></button></div></div>
+        </form>
+        <p class="composer-footnote">结果以工具返回为准；旁听与交易请核实相关规则。<span>Enter 发送 · Shift + Enter 换行</span></p>
+      </div>
+    </main>
+  </div>
+  <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <dialog id="connection-dialog" class="settings-dialog"><form id="connection-form"><span class="eyebrow">WELCOME TO CAMPUS</span><h2>连接你的校园助手</h2><p>使用后端分配的访问密钥进入。测试环境也可直接进入演示。</p><label for="token-input">访问密钥</label><input id="token-input" type="password" autocomplete="off" spellcheck="false" placeholder="填写访问密钥" required><p class="small-note">密钥仅保留在当前页面，刷新后需重新连接。</p><p id="connection-error" class="form-error" role="alert"></p><div class="dialog-actions"><button type="button" class="secondary-button" id="demo-connect">进入演示</button><button type="submit" class="primary-button" id="connect-button">连接</button></div><button id="connection-close" class="text-button dialog-close" type="button" hidden>返回对话</button></form></dialog>
+  <dialog id="restore-dialog" class="settings-dialog"><form id="restore-form"><h2>恢复已有对话</h2><p>输入当前账户下的会话 ID，消息将从后端读取。</p><label for="session-input">会话 ID</label><input id="session-input" autocomplete="off" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" required><div class="dialog-actions"><button id="restore-close" type="button" class="secondary-button">取消</button><button type="submit" class="primary-button">恢复</button></div></form></dialog>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "component": "Apache ECharts",
+  "version": "5.6.0",
+  "source": "npm package echarts@5.6.0",
+  "sha256": "bf4a223524e40b77c304bec67e1222cf551f14880cf42c69dc046558e11c07b1",
+  "license": "Apache-2.0"
+}
